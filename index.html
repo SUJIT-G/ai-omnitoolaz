@@ -218,7 +218,112 @@
             </div>
         </div>
     </section>
+<!-- ========================================= -->
+    <!-- PORTFOLIO / CASE STUDY SECTION (NEW)      -->
+    <!-- ========================================= -->
+    <style>
+        /* Portfolio Specific CSS (Sirf is section ke liye) */
+        .portfolio-card {
+            background: linear-gradient(135deg, var(--bg-surface), #000);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+            align-items: center;
+            box-shadow: var(--glow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-card:hover { 
+            border-color: var(--primary); 
+            transform: translateY(-5px);
+        }
+        .portfolio-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            transition: transform 0.5s ease;
+        }
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.02);
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+        .feature-list li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+        }
+        @media (max-width: 992px) {
+            .portfolio-card { grid-template-columns: 1fr; padding: 24px; }
+            .portfolio-content { text-align: center; order: 2; }
+            .portfolio-image { order: 1; margin-bottom: 20px; }
+            .feature-list li { text-align: left; display: inline-block; width: 100%; }
+        }
+    </style>
 
+    <section class="section-padding" id="portfolio" style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container fade-up">
+            
+            <div class="text-center" style="margin-bottom: 50px;">
+                <div class="trust-badge" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">
+                    🟢 Live Project Case Study
+                </div>
+                <h2 class="gradient-text" style="font-size: 2.8rem; margin-bottom: 15px; line-height: 1.2;">Fully Automated AI Web App</h2>
+                <p style="color: var(--text-gray); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+                    See our AI engineering in action. We built a complete autonomous platform that researches, writes, formats, and publishes high-quality SEO content on autopilot.
+                </p>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-content">
+                    <h3 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; color: #fff;">
+                        StellarInsight<span style="color: var(--primary);">.in</span>
+                    </h3>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 25px; line-height: 1.6;">
+                        A next-generation AI-powered blog featuring automated SEO content pipelines, intelligent categorization, and a sleek modern UI designed for high engagement.
+                    </p>
+                    
+                    <ul class="feature-list">
+                        <li><strong>100% Autonomous Generation:</strong> AI researches trending topics and writes deep-dive articles without human intervention.</li>
+                        <li><strong>SEO Optimized Formatting:</strong> Auto-generates Meta tags, H1/H2 structure, and keyword density mapping.</li>
+                        <li><strong>Custom Cloud Architecture:</strong> Built for blazing fast load speeds and scalable data management.</li>
+                    </ul>
+                    
+                    <a href="https://stellarinsight.in/" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 14px 28px; font-size: 1rem; background: transparent; border: 2px solid var(--primary); box-shadow: none;">
+                        Visit Live Website ↗
+                    </a>
+                </div>
+                
+                <div class="portfolio-image">
+                    <!-- Placeholder Image (Aap baad me isko apne laptop mockup wale screenshot se replace kar lena) -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="StellarInsight AI Web App Preview">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ========================================= -->
+    <!-- END PORTFOLIO SECTION                     -->
+    <!-- ========================================= -->
+    
     <!-- Pricing / Offer / Checkout -->
     <section class="section-padding" id="offer">
         <div class="container fade-up">
