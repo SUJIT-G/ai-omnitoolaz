@@ -350,8 +350,18 @@
             "description": "Project Booking (20% Off)",
             "image": "https://dummyimage.com/150x150/06b6d4/fff&text=SGI", 
             "handler": function (response){
-                alert("Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
-            },
+    // Payment ID ko variable mein save kiya
+    let payment_id = response.razorpay_payment_id;
+    
+    // YAHAN APNA WHATSAPP NUMBER DALEIN (Country code ke sath, bina + ke)
+    let myWhatsAppNumber = "919876543210"; 
+    
+    // Customer ke liye Auto-Message
+    let successMessage = `🎉 Hello Sree Gonesh Info! I have successfully paid the ₹999 Booking Amount for my AI Setup.%0A%0A*My Payment ID is:* ${payment_id}%0A%0APlease check and let's start the project!`;
+    
+    // WhatsApp par redirect kar do
+    window.location.href = `https://wa.me/${myWhatsAppNumber}?text=${successMessage}`;
+},
             "prefill": { "name": "", "email": "", "contact": "" },
             "theme": { "color": "#06b6d4" }
         };
