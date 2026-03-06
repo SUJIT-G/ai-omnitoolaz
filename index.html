@@ -131,8 +131,35 @@
 
         /* RESPONSIVE */
         @media (max-width: 992px) { .form-grid { grid-template-columns: 1fr; } }
+        
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
+            /* === NEW HERO FIXES === */
+            .hero { 
+                flex-direction: column; /* Stacks the image and text vertically */
+                justify-content: center;
+                padding-top: 120px; /* Ensures it doesn't hide behind the sticky header */
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .hero-content {
+                width: 100%; /* Stops the text from pushing off the screen */
+                margin: 0 auto;
+                order: 2; /* Optional: if you want the text to appear BELOW the image on mobile */
+            }
+            /* Forces the 3D graphic/image to shrink to fit the screen */
+            .hero img, .hero picture, .hero svg, .hero canvas {
+                max-width: 100%;
+                height: auto;
+                margin: 0 auto 30px auto; 
+                order: 1; /* Puts image above text. Remove order rules if you want text first */
+            }
+            /* ======================== */
+
+            /* Your existing mobile styles */
+            .hero h1 { 
+                font-size: 2.5rem; /* Made slightly smaller for better mobile fit */
+                word-wrap: break-word; /* Prevents long words from breaking the screen width */
+            }
             .new-price { font-size: 3rem; }
             .offer-box { padding: 40px 20px; }
             .mobile-sticky-cta { display: block; }
