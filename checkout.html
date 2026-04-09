@@ -1,32 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 py-10 px-4">
-    <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg">
-        <h2 class="text-2xl font-bold mb-2">Claim Your Audit</h2>
-        <p class="text-gray-600 mb-6">Fill in details to get your custom growth report.</p>
-        
-        <form action="thank-you.html" class="space-y-4">
-            <div>
-                <label class="block text-sm font-medium">Business Name</label>
-                <input type="text" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label class="block text-sm font-medium">WhatsApp Number</label>
-                <input type="tel" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label class="block text-sm font-medium">Website URL (if any)</label>
-                <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
-            </div>
-            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">Get My Free Audit</button>
-        </form>
-        
-        <div class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500">
-            <i class="fas fa-lock"></i> 100% Secure & Private
-        </div>
-    </div>
-</body>
-</html>
+<!-- Inside your checkout.html -->
+<button id="rzp-button1" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+    Pay & Get Audit
+</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_live_SBhTeV8COgZ5KV", // <-- REPLACE WITH YOUR KEY
+    "amount": "99900", // Amount in paise (99900 = ₹999)
+    "currency": "INR",
+    "name": "Sree Gonesh Info Arts",
+    "description": "Website Growth Audit",
+    "handler": function (response){
+        // Redirect to thank you page after successful payment
+        window.location.href = "thank-you.html";
+    },
+    "prefill": {
+        "name": "Customer Name",
+        "email": "customer@example.com",
+        "contact": "9999999999"
+    },
+    "theme": {
+        "color": "#2563eb"
+    }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
