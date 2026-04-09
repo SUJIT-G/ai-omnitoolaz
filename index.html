@@ -523,35 +523,36 @@
         }
 
         // --- RAZORPAY CHECKOUT ---
-        var options = {
-            "key": "rzp_live_SBhTeV8COgZ5KV", // ⚠️ ENTER YOUR RAZORPAY KEY HERE
-            "amount": "99900", // 999 INR in paise
-            "currency": "INR",
-            "name": "Sree Gonesh Info",
-            "description": "Project Booking (20% Off)",
-            "image": "https://dummyimage.com/150x150/06b6d4/fff&text=SGI", 
-            "handler": function (response){
-    // Payment ID ko variable mein save kiya
-    let payment_id = response.razorpay_payment_id;
-    
-    // YAHAN APNA WHATSAPP NUMBER DALEIN (Country code ke sath, bina + ke)
-    let myWhatsAppNumber = "919382046060"; 
-    
-    // Customer ke liye Auto-Message
-    let successMessage = `🎉 Hello Sree Gonesh Info! I have successfully paid the ₹999 Booking Amount for my AI Setup.%0A%0A*My Payment ID is:* ${payment_id}%0A%0APlease check and let's start the project!`;
-    
-    // WhatsApp par redirect kar do
-    window.location.href = `https://wa.me/${myWhatsAppNumber}?text=${successMessage}`;
-},
-            "prefill": { "name": "", "email": "", "contact": "" },
-            "theme": { "color": "#06b6d4" }
-        };
-        var rzp1 = new Razorpay(options);
-        document.getElementById('rzp-button1').onclick = function(e){
-            rzp1.open();
-            e.preventDefault();
-        }
+// Make sure this is loaded AFTER the Razorpay script tag
+var options = {
+    "key": "rzp_live_SBhTeV8COgZ5KV", // Your Live Key
+    "amount": "99900", 
+    "currency": "INR",
+    "name": "Sree Gonesh Info",
+    "description": "Project Booking (20% Off)",
+    "image": "https://dummyimage.com/150x150/06b6d4/fff&text=SGI", 
+    "handler": function (response){
+        let payment_id = response.razorpay_payment_id;
+        let myWhatsAppNumber = "919382046060"; 
+        let successMessage = `🎉 Hello Sree Gonesh Info! I have successfully paid the ₹999 Booking Amount. Payment ID: ${payment_id}`;
+        
+        // Redirect to WhatsApp with success message
+        window.location.href = `https://wa.me/${myWhatsAppNumber}?text=${encodeURIComponent(successMessage)}`;
+    },
+    "prefill": {
+        "name": "", 
+        "email": "", 
+        "contact": ""
+    },
+    "theme": { "color": "#06b6d4" }
+};
 
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+};
         // --- SCROLL ANIMATION ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
