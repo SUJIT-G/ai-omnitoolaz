@@ -1,32 +1,43 @@
-<!-- Inside your checkout.html -->
-<button id="rzp-button1" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">
-    Pay & Get Audit
-</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Checkout | Sree Gonesh Info</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-xl max-w-sm w-full text-center">
+        <h2 class="text-2xl font-bold mb-4">Complete Payment</h2>
+        <p class="text-gray-400 mb-6">You are booking your AI Setup for ₹999.</p>
+        
+        <button id="rzp-button1" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-4 rounded-xl font-bold text-lg transition">
+            Pay Now
+        </button>
+        
+        <a href="index.html" class="block mt-6 text-sm text-gray-500 hover:text-white underline">Back to Home</a>
+    </div>
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script>
-var options = {
-    "key": "rzp_live_SBhTeV8COgZ5KV", // <-- REPLACE WITH YOUR KEY
-    "amount": "99900", // Amount in paise (99900 = ₹999)
-    "currency": "INR",
-    "name": "Sree Gonesh Info Arts",
-    "description": "Website Growth Audit",
-    "handler": function (response){
-        // Redirect to thank you page after successful payment
-        window.location.href = "thank-you.html";
-    },
-    "prefill": {
-        "name": "Customer Name",
-        "email": "customer@example.com",
-        "contact": "9999999999"
-    },
-    "theme": {
-        "color": "#2563eb"
-    }
-};
-var rzp1 = new Razorpay(options);
-document.getElementById('rzp-button1').onclick = function(e){
-    rzp1.open();
-    e.preventDefault();
-}
-</script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "rzp_live_SBhTeV8COgZ5KV", // Keep this here for now
+            "amount": "99900", 
+            "currency": "INR",
+            "name": "Sree Gonesh Info",
+            "description": "Project Booking (20% Off)",
+            "handler": function (response){
+                let payment_id = response.razorpay_payment_id;
+                let myWhatsAppNumber = "919382046060"; 
+                let successMessage = `🎉 Hello Sree Gonesh Info! I have paid the ₹999 Booking Amount.%0A%0A*My Payment ID is:* ${payment_id}`;
+                window.location.href = `https://wa.me/${myWhatsAppNumber}?text=${successMessage}`;
+            },
+            "theme": { "color": "#06b6d4" }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
