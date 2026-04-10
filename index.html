@@ -424,61 +424,50 @@
         </div>
     </section>
 
-    <!-- Contact Form Section (Redirects to WhatsApp) -->
-    <section class="section-padding" id="contact">
-        <div class="container fade-up">
-            <div class="form-grid">
-                <div>
-                    <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 20px;">Let's Discuss Your Idea</h2>
-                    <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px;">Fill out the form, and our lead developer will contact you directly via WhatsApp to discuss architecture and pricing.</p>
-                    <ul style="list-style: none; color: var(--text-gray);">
-                        <li style="margin-bottom: 15px;">✅ Custom Architecture Design</li>
-                        <li style="margin-bottom: 15px;">✅ Free Initial Consultation</li>
-                        <li style="margin-bottom: 15px;">✅ NDA Protected (100% Privacy)</li>
-                    </ul>
-                </div>
+    <!-- Contact Form Section (WhatsApp + Google Form) -->
+<section class="section-padding" id="contact">
+    <div class="container fade-up">
+        <div class="form-grid">
+            <!-- Left Side: Trust & Value -->
+            <div>
+                <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 20px;">Let's Discuss Your Idea</h2>
+                <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px;">Choose your preferred way to connect. We are ready to build your AI vision.</p>
+                
+                <ul style="list-style: none; color: var(--text-gray);">
+                    <li style="margin-bottom: 15px;">✅ Instant Reply via WhatsApp</li>
+                    <li style="margin-bottom: 15px;">✅ Detailed Project Analysis via Form</li>
+                    <li style="margin-bottom: 15px;">✅ NDA Protected (100% Privacy)</li>
+                </ul>
 
-                <div class="form-container">
-                    <form onsubmit="sendToWhatsApp(event)">
-                        <div class="input-group">
-                            <input type="text" id="wa_name" placeholder="Your Full Name" required>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" id="wa_email" placeholder="Your Email Address" required>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" id="wa_phone" placeholder="Your Phone Number" required>
-                        </div>
-                        <div class="input-group">
-                            <textarea id="wa_details" rows="4" placeholder="Briefly describe your business & what you want to automate..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Send via WhatsApp 💬</button>
-                    </form>
-                </div>
+                <!-- Google Form Link Button (NEW) -->
+                <a href="https://forms.gle/Y6RwYbj2bDtEPc1e6" target="_blank" 
+                   class="btn" style="background: transparent; border: 2px solid var(--secondary); margin-top: 20px;">
+                   Fill Detailed Form 📝
+                </a>
+            </div>
+
+            <!-- Right Side: WhatsApp Form -->
+            <div class="form-container">
+                <form onsubmit="sendToWhatsApp(event)">
+                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Quick Chat (WhatsApp)</h3>
+                    <div class="input-group">
+                        <input type="text" id="wa_name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="wa_email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="wa_phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="wa_details" rows="4" placeholder="Describe your business goal..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send via WhatsApp 💬</button>
+                </form>
             </div>
         </div>
-    </section>
-    <!-- Google Form Section -->
-<section class="section-padding" id="application">
-    <div class="container fade-up" style="max-width: 800px;">
-        <div class="text-center" style="margin-bottom: 40px;">
-            <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 15px;">Apply for AI Consultation</h2>
-            <p style="color: var(--text-gray);">Fill out the form below to get your custom AI automation roadmap.</p>
-        </div>
-
-        <!-- Responsive Iframe Wrapper -->
-        <div style="position: relative; width: 100%; padding-top: 100%; border-radius: 20px; overflow: hidden; border: 1px solid var(--primary); box-shadow: var(--glow);">
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdm97uUMrf_nJD8vtLcBtgNWKVdm6_1nkGAhRHrekosEn4wag/viewform?embedded=true" 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0">
-                Loading…
-            </iframe>
-        </div>
     </div>
-</section>
+</section>   
 
   <!-- Footer -->
     <footer>
