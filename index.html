@@ -110,14 +110,42 @@
     color: #00d2ff; /* Blue color jo aapke screenshot mein hai */
 }
 
-        /* === HERO SECTION === */
-        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding-top: 80px; overflow: hidden; }
-        .hero-bg-glow { position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(0,0,0,0) 70%); z-index: -1; }
-        
-        .hero-content { text-align: center; max-width: 800px; margin: 0 auto; }
-        .trust-badge { display: inline-flex; align-items: center; background: var(--bg-surface); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--border-color); margin-bottom: 24px; font-size: 0.9rem; font-weight: 600; color: #fbbf24; }
-        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 40px; }
+        /* === HERO SECTION UPDATED === */
+.hero { 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; /* Sab kuch vertically stack karne ke liye */
+    justify-content: center; /* Desktop aur Mobile dono pe vertical center karega */
+    align-items: center; /* Horizontally center karne ke liye */
+    position: relative; 
+    padding-top: 80px; 
+    overflow: hidden; 
+    text-align: center; /* Text ko center rakhne ke liye */
+}
+
+.hero-content { 
+    max-width: 800px; 
+    width: 100%; /* Ensure karta hai ki width container ke bahar na jaye */
+    margin: 0 auto; /* Left/Right margin auto se center alignment pakka ho jata hai */
+    z-index: 1; /* Taaki content background glow ke upar rahe */
+}
+
+/* Glow ko center mein maintain karne ke liye */
+.hero-bg-glow { 
+    position: absolute; 
+    top: 50%; /* 20% se badal kar 50% karein agar center mein glow chahiye */
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 60vw; 
+    height: 60vw; 
+    background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(0,0,0,0) 70%); 
+    z-index: -1; 
+}
+
+/* Desktop font size fix (Optional: Screen choti hone par text wrap ho jaye) */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+}
         
         /* === SERVICES (BENTO GRID) === */
         .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
