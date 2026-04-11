@@ -109,7 +109,40 @@
 .dot-info {
     color: #00d2ff; /* Blue color jo aapke screenshot mein hai */
 }
+.announcement-bar {
+    background: #fbbf24; /* Yellow color for high visibility */
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 99;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
 
+.scrolling-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 25s linear infinite;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding-right: 50px;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Pause animation on hover */
+.announcement-bar:hover .scrolling-text {
+    animation-play-state: paused;
+}
+        
         /* === HERO SECTION UPDATED === */
 .hero { 
     min-height: 100vh; 
@@ -257,6 +290,15 @@
             <span class="logo-text">SreeGonesh<span class="dot-info">.Info</span></span>
         </a>
     </div>
+       <div class="announcement-bar">
+    <div class="scrolling-text">
+        <span>🔥 Limited Time Offer: Get Your AI Business Setup Free Consultation! </span>
+        <span> Ends In: <b id="days-nav">00</b>d : <b id="hours-nav">00</b>h : <b id="minutes-nav">00</b>m : <b id="seconds-nav">00</b>s </span>
+        <span> &nbsp; | &nbsp; 🚀 Turn Your Business Into an AI Powered Sales Machine! </span>
+        <span>🔥 Limited Time Offer: Get Your AI Business Setup Free Consultation! </span>
+        <span> Ends In: <b id="days-nav2">00</b>d : <b id="hours-nav2">00</b>h : <b id="minutes-nav2">00</b>m : <b id="seconds-nav2">00</b>s </span>
+    </div>
+</div>
 </header>
 
     <!-- Hero Section -->
@@ -634,20 +676,28 @@ document.getElementById('rzp-button1').onclick = function(e){
         });
 
         // --- COUNTDOWN TIMER ---
-        let countdownDate = new Date().getTime() + (48 * 60 * 60 * 1000);
-        let x = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countdownDate - now;
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+       // Update your existing setInterval function to include these:
+let x = setInterval(function() {
+    // ... your existing distance calculation ...
 
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-        }, 1000);
+    let d = days < 10 ? "0" + days : days;
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+
+    // Update Announcement Bar Timer
+    if(document.getElementById("days-nav")) document.getElementById("days-nav").innerText = d;
+    if(document.getElementById("hours-nav")) document.getElementById("hours-nav").innerText = h;
+    if(document.getElementById("minutes-nav")) document.getElementById("minutes-nav").innerText = m;
+    if(document.getElementById("seconds-nav")) document.getElementById("seconds-nav").innerText = s;
+
+    // Duplicate IDs for seamless loop (optional)
+    if(document.getElementById("days-nav2")) document.getElementById("days-nav2").innerText = d;
+    if(document.getElementById("hours-nav2")) document.getElementById("hours-nav2").innerText = h;
+    if(document.getElementById("minutes-nav2")) document.getElementById("minutes-nav2").innerText = m;
+    if(document.getElementById("seconds-nav2")) document.getElementById("seconds-nav2").innerText = s;
+
+}, 1000);
     </script>
 </body>
 </html> 
