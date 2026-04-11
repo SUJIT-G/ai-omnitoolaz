@@ -88,10 +88,27 @@
         .btn:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
 
         /* === HEADER === */
-        header { position: fixed; top: 0; width: 100%; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 100; padding: 15px 0; }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -0.5px; }
-        .logo span { color: var(--primary); }
+        .logo-container {
+    display: flex;
+    align-items: center; /* Image aur text ko vertical center karega */
+    text-decoration: none;
+    gap: 10px; /* Logo aur text ke beech ka space */
+}
+
+.logo-img {
+    height: 40px; /* Aap apne hisaab se height adjust kar sakte hain */
+    width: auto;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* Base text color white */
+}
+
+.dot-info {
+    color: #00d2ff; /* Blue color jo aapke screenshot mein hai */
+}
 
         /* === HERO SECTION === */
         .hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding-top: 80px; overflow: hidden; }
@@ -207,8 +224,9 @@
     <!-- Header -->
    <header>
     <div class="container nav-inner">
-        <a href="index.html" class="logo">
-            <img src="images/Sree gonesh Info .png" alt="SreeGonesh.Info Logo" style="height: 40px;">
+        <a href="index.html" class="logo-container">
+            <img src="images/Sree gonesh Info .png" alt="Logo" class="logo-img">
+            <span class="logo-text">SreeGonesh<span class="dot-info">.Info</span></span>
         </a>
     </div>
 </header>
