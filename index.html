@@ -147,20 +147,24 @@
 .hero { 
     min-height: 100vh; 
     display: flex; 
-    flex-direction: column; /* Sab kuch vertically stack karne ke liye */
-    justify-content: center; /* Desktop aur Mobile dono pe vertical center karega */
-    align-items: center; /* Horizontally center karne ke liye */
+    align-items: center; 
+    justify-content: center; 
     position: relative; 
-    padding-top: 80px; 
-    overflow: hidden; 
-    text-align: center; /* Text ko center rakhne ke liye */
+    padding: 100px 20px; 
+    text-align: center;
 }
 
 .hero-content { 
-    max-width: 800px; 
-    width: 100%; /* Ensure karta hai ki width container ke bahar na jaye */
-    margin: 0 auto; /* Left/Right margin auto se center alignment pakka ho jata hai */
-    z-index: 1; /* Taaki content background glow ke upar rahe */
+    max-width: 900px; 
+    width: 100%;
+    z-index: 1;
+}
+
+/* Ensure images don't break the layout */
+.hero-img { 
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 20px; 
 }
 
 /* Glow ko center mein maintain karne ke liye */
@@ -676,28 +680,42 @@ document.getElementById('rzp-button1').onclick = function(e){
         });
 
         // --- COUNTDOWN TIMER ---
-       // Update your existing setInterval function to include these:
-let x = setInterval(function() {
-    // ... your existing distance calculation ...
+       // --- INFINITE DAILY COUNTDOWN TIMER ---
+function updateTimer() {
+    const now = new Date();
+    // Calculate time until next midnight
+    const tomorrow = new Date();
+    tomorrow.setHours(24, 0, 0, 0);
+    
+    const diff = tomorrow - now;
 
-    let d = days < 10 ? "0" + days : days;
-    let h = hours < 10 ? "0" + hours : hours;
-    let m = minutes < 10 ? "0" + minutes : minutes;
-    let s = seconds < 10 ? "0" + seconds : seconds;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    // Update Announcement Bar Timer
-document.getElementById("days-nav").innerText = days < 10 ? "0" + days : days;
-document.getElementById("hours-nav").innerText = hours < 10 ? "0" + hours : hours;
-document.getElementById("minutes-nav").innerText = minutes < 10 ? "0" + minutes : minutes;
-document.getElementById("seconds-nav").innerText = seconds < 10 ? "0" + seconds : seconds;
+    const d = days.toString().padStart(2, '0');
+    const h = hours.toString().padStart(2, '0');
+    const m = minutes.toString().padStart(2, '0');
+    const s = seconds.toString().padStart(2, '0');
 
-    // Duplicate IDs for seamless loop (optional)
-    if(document.getElementById("days-nav2")) document.getElementById("days-nav2").innerText = d;
-    if(document.getElementById("hours-nav2")) document.getElementById("hours-nav2").innerText = h;
-    if(document.getElementById("minutes-nav2")) document.getElementById("minutes-nav2").innerText = m;
-    if(document.getElementById("seconds-nav2")) document.getElementById("seconds-nav2").innerText = s;
+    // Update all elements
+    const ids = ["days-nav", "hours-nav", "minutes-nav", "seconds-nav", "days-nav2", "hours-nav2", "minutes-nav2", "seconds-nav2"];
+    
+    ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            if (id.includes("days")) el.innerText = d;
+            if (id.includes("hours")) el.innerText = h;
+            if (id.includes("minutes")) el.innerText = m;
+            if (id.includes("seconds")) el.innerText = s;
+        }
+    });
+}
 
-}, 1000);
+// Run immediately and then every second
+updateTimer();
+setInterval(updateTimer, 1000);
     </script>
 </body>
 </html> 
