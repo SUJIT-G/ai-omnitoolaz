@@ -686,10 +686,10 @@ let x = setInterval(function() {
     let s = seconds < 10 ? "0" + seconds : seconds;
 
     // Update Announcement Bar Timer
-    if(document.getElementById("days-nav")) document.getElementById("days-nav").innerText = d;
-    if(document.getElementById("hours-nav")) document.getElementById("hours-nav").innerText = h;
-    if(document.getElementById("minutes-nav")) document.getElementById("minutes-nav").innerText = m;
-    if(document.getElementById("seconds-nav")) document.getElementById("seconds-nav").innerText = s;
+document.getElementById("days-nav").innerText = days < 10 ? "0" + days : days;
+document.getElementById("hours-nav").innerText = hours < 10 ? "0" + hours : hours;
+document.getElementById("minutes-nav").innerText = minutes < 10 ? "0" + minutes : minutes;
+document.getElementById("seconds-nav").innerText = seconds < 10 ? "0" + seconds : seconds;
 
     // Duplicate IDs for seamless loop (optional)
     if(document.getElementById("days-nav2")) document.getElementById("days-nav2").innerText = d;
