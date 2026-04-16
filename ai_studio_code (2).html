@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS49CEC946"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GS49CEC946');
+    </script>
+    
+    <!-- Google tag (gtag.js) AW -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-831389378"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-831389378');
+    </script>
+    
+    <!-- Event snippet for conversion -->
+    <script>
+      gtag('event', 'conversion', {'send_to': 'AW-831389378/EJmmCOyavK4DEML9t4wD'});
+    </script>
+    
+    <!-- Delayed navigation helper -->
+    <script>
+      function gtagSendEvent(url) {
+        var callback = function () {
+          if (typeof url === 'string') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'close_convert_lead', {
+          'event_callback': callback,
+          'event_timeout': 2000,
+        });
+        return false;
+      }
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sree Gonesh Info | 20% OFF on AI Automation</title>
+    <meta name="description" content="Premium AI Automation, Web Apps, and Chatbots. Get 20% OFF today by Sree Gonesh Info.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === ULTRA PREMIUM CSS VARIABLES === */
+        :root {
+            --bg-base: #030712;
+            --bg-surface: #111827;
+            --bg-surface-hover: #1f2937;
+            --primary: #06b6d4; /* Cyan */
+            --secondary: #8b5cf6; /* Purple */
+            --accent: #f43f5e; /* Red/Pink */
+            --text-light: #f9fafb;
+            --text-gray: #9ca3af;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --glow: 0 0 20px rgba(6, 182, 212, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        
+        body { background-color: var(--bg-base); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+
+        /* === REUSABLE UTILITIES === */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-center { text-align: center; }
+        .gradient-text {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .section-padding { padding: 100px 0; }
+        
+        /* Animations */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 32px; font-size: 1.1rem; font-weight: 700;
+            color: #fff; background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none; border-radius: 50px; cursor: pointer; text-decoration: none;
+            box-shadow: var(--glow); transition: all 0.3s ease; position: relative; overflow: hidden;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+
+        /* === HEADER === */
+        header { position: fixed; top: 0; width: 100%; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 100; display: flex; flex-direction: column; }
+        
+        .nav-inner { display: flex; justify-content: center; align-items: center; padding: 15px 0; width: 100%;}
+        
+        .logo-container {
+            display: flex; align-items: center; text-decoration: none; gap: 10px; 
+        }
+        .logo-img { height: 40px; width: auto; }
+        .logo-text { font-size: 24px; font-weight: bold; color: #ffffff; }
+        .dot-info { color: #00d2ff; }
+        
+        .announcement-bar {
+            background: #fbbf24; color: #000; overflow: hidden; white-space: nowrap;
+            padding: 10px 0; font-weight: 700; font-size: 0.9rem; position: relative;
+            z-index: 99; border-bottom: 1px solid rgba(0,0,0,0.1); width: 100%;
+        }
+
+        .scrolling-text {
+            display: inline-block; padding-left: 100%; animation: scroll-left 25s linear infinite;
+        }
+        .scrolling-text span { display: inline-block; padding-right: 50px; }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        .announcement-bar:hover .scrolling-text { animation-play-state: paused; }
+        
+        /* === HERO SECTION === */
+        .hero { 
+            min-height: 100vh; display: flex; align-items: center; justify-content: center; 
+            position: relative; padding: 160px 20px 80px; text-align: center;
+        }
+        .hero-bg-glow { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(0,0,0,0) 70%); 
+            z-index: -1; 
+        }
+        .hero-content { max-width: 900px; width: 100%; z-index: 1; margin: 0 auto; }
+        .hero-img { max-width: 100%; height: auto; margin-bottom: 20px; }
+        .trust-badge { display: inline-flex; align-items: center; background: var(--bg-surface); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--border-color); margin-bottom: 24px; font-size: 0.9rem; font-weight: 600; color: #fbbf24; }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 40px; }
+
+        /* === SERVICES (BENTO GRID) === */
+        .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .bento-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 24px; padding: 32px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .bento-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(6,182,212,0.1), transparent); opacity: 0; transition: opacity 0.4s ease; }
+        .bento-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .bento-card:hover::before { opacity: 1; }
+        .icon-box { font-size: 2.5rem; margin-bottom: 20px; display: inline-block; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 16px; }
+        .bento-card h3 { font-size: 1.3rem; margin-bottom: 12px; font-weight: 700; }
+        .bento-card p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* === CONTACT FORM === */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .form-container { background: var(--bg-surface); padding: 40px; border-radius: 24px; border: 1px solid var(--border-color); }
+        .input-group { margin-bottom: 20px; }
+        .input-group input, .input-group textarea { width: 100%; padding: 16px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 12px; color: #fff; font-size: 1rem; transition: 0.3s; }
+        .input-group input:focus, .input-group textarea:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 10px rgba(6,182,212,0.2); }
+
+        /* === RESPONSIVE FIXES === */
+        @media (max-width: 992px) { .form-grid { grid-template-columns: 1fr; } }
+        
+        @media (max-width: 768px) {
+            .hero { padding-top: 180px; padding-bottom: 40px; } 
+            .hero-content { width: 100%; overflow-wrap: break-word; } 
+            .hero h1 { font-size: 2.3rem; word-break: break-word; line-height: 1.2; }
+            .hero p { font-size: 1rem; }
+            .form-container { padding: 25px; }
+            .btn { width: 100%; font-size: 1rem; padding: 15px 20px; } 
+        }
+    </style>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="announcement-bar">
+            <div class="scrolling-text">
+                <span>🔥 Limited Time Offer: Get Your AI Business Setup Free Consultation! </span>
+                <span> Ends In: <b id="days-nav">00</b>d : <b id="hours-nav">00</b>h : <b id="minutes-nav">00</b>m : <b id="seconds-nav">00</b>s </span>
+                <span> &nbsp; | &nbsp; 🚀 Turn Your Business Into an AI Powered Sales Machine! </span>
+                <span>🔥 Limited Time Offer: Get Your AI Business Setup Free Consultation! </span>
+                <span> Ends In: <b id="days-nav2">00</b>d : <b id="hours-nav2">00</b>h : <b id="minutes-nav2">00</b>m : <b id="seconds-nav2">00</b>s </span>
+            </div>
+        </div>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo-container">
+                <img src="images/Sree gonesh Info .png" alt="Logo" class="logo-img">
+                <span class="logo-text">SreeGonesh<span class="dot-info">.Info</span></span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="hero-bg-glow"></div>
+        <div class="container">
+            <img src="images/स्मार्टai.png" alt="Hero Image" class="hero-img">
+            
+            <div class="hero-content fade-up" style="margin-top: 30px;">
+                <div class="trust-badge">⭐⭐⭐⭐⭐ 5.0 Rated Digital Agency</div>
+                <h1>Automate Your Business with <span class="gradient-text">Advanced AI</span></h1>
+                <p>Stop doing manual work. We build cutting-edge Custom AI Chatbots, Cloudflare Workers, Web Apps, and Automated Workflows tailored for your specific business needs.</p>
+                
+                <a href="offer" class="btn" style="font-size: 1.2rem; padding: 18px 40px; display: inline-flex;">Get Your Custom AI Setup</a>
+                <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-gray);">🔥 Limited time 20% Discount available.</p>
+                
+                <div style="margin-top: 60px;">
+                    <img src="images/Sree0ff.png" alt="20% Off AI Setup Offer" style="width: 100%; max-width: 900px; border-radius: 20px; border: 1px solid rgba(6, 182, 212, 0.3); box-shadow: 0 0 40px rgba(139, 92, 246, 0.2); animation: float 6s ease-in-out infinite;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Bento Grid -->
+    <section class="section-padding" id="services" style="background: rgba(255,255,255,0.01);">
+        <div class="container">
+            <div class="text-center fade-up">
+                <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 15px;">Our Premium AI Solutions</h2>
+                <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Everything you need to scale your operations, reduce costs, and dominate your niche.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card fade-up">
+                    <div class="icon-box">🤖</div>
+                    <img src="images/Smart AI chat.png" alt="Smart AI Chatbots" style="width:100%; max-width:600px;">
+                    <h3>Smart AI Chatbots</h3>
+                    <p>Customer support bots trained perfectly on your website data and PDFs to sell and support 24/7.</p>
+                </div>
+                <div class="bento-card fade-up">
+                    <div class="icon-box">📱</div>
+                    <img src="images/telebot.png" alt="Telegram Bot" style="width:100%; max-width:600px;">
+                    <h3>Telegram & Social media Bots</h3>
+                    <p>Automate your community management, signal parsing, and user engagement seamlessly.</p>
+                </div>
+                <div class="bento-card fade-up">
+                    <div class="icon-box">🌐</div>
+                    <img src="images/webap.png" alt="AI Web Apps" style="width:100%; max-width:600px;">
+                    <h3>Custom AI Web Apps</h3>
+                    <p>Full-stack modern web applications integrated deep with OpenAI, Anthropic, or Local LLMs.</p>
+                </div>
+                <div class="bento-card fade-up">
+                    <div class="icon-box">✍️</div>
+                    <img src="images/aiblog.png" alt="SEO Content Automation" style="width:100%; max-width:600px;">
+                    <h3>SEO Content Automation</h3>
+                    <p>Auto-generating SEO blog pipelines that write, format, and publish to WordPress automatically.</p>
+                </div>
+                <div class="bento-card fade-up">
+                    <div class="icon-box">🔗</div>
+                    <img src="images/api wokflow.png" alt="API & Workflow" style="width:100%; max-width:600px;">
+                    <h3>API & Workflow Setup</h3>
+                    <p>Connecting your CRMs, emails, and web app databases using advanced logic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section style="padding: 50px 20px;">
+        <div style="width: 100%; max-width: 800px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: var(--glow); border: 1px solid var(--border-color);">
+            <video width="100%" height="auto" controls autoplay muted loop playsinline style="display: block;">
+                <source src="images/aivid (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section-padding" id="contact">
+        <div class="container fade-up">
+            <div class="form-grid">
+                <!-- Left Side: Trust & Value -->
+                <div>
+                    <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 20px;">Let's Discuss Your Idea</h2>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px;">Choose your preferred way to connect. We are ready to build your AI vision.</p>
+                    
+                    <ul style="list-style: none; color: var(--text-gray);">
+                        <li style="margin-bottom: 15px;">✅ Instant Reply via WhatsApp</li>
+                        <li style="margin-bottom: 15px;">✅ Detailed Project Analysis via Form</li>
+                        <li style="margin-bottom: 15px;">✅ NDA Protected (100% Privacy)</li>
+                    </ul>
+
+                    <a href="https://forms.gle/Y6RwYbj2bDtEPc1e6" target="_blank" 
+                       class="btn" style="background: transparent; border: 2px solid var(--secondary); margin-top: 20px;">
+                       Fill Detailed Form 📝
+                    </a>
+                </div>
+
+                <!-- Right Side: WhatsApp Form -->
+                <div class="form-container">
+                    <form onsubmit="sendToWhatsApp(event)">
+                        <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Quick Chat (WhatsApp)</h3>
+                        <div class="input-group">
+                            <input type="text" id="wa_name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="wa_email" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="wa_phone" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="wa_details" rows="4" placeholder="Describe your business goal..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send via WhatsApp 💬</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>   
+
+    <!-- ========================================= -->
+    <!-- COMPLETE FOOTER SECTION (WITH MAP & INFO) -->
+    <!-- ========================================= -->
+    <footer style="background:#0b1220; padding:60px 20px; text-align:center; color:#fff; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container" style="max-width: 800px;">
+            
+            <a href="index.html" style="text-decoration: none; display: block; margin-bottom: 30px;">
+                <h2 style="font-size: 2rem; color: #fff; font-weight: 800;">SreeGonesh<span style="color: var(--primary);">.Info</span></h2>
+            </a>
+
+            <!-- Feedback Box -->
+            <div style="background:#111c2e; padding:30px 20px; border-radius:16px; border: 1px solid var(--border-color); max-width:500px; margin:auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <h3 style="margin-bottom: 10px;">🌟 We Value Your Feedback!</h3>
+                <p style="color:#ccc; margin-bottom: 20px;">Sree Gonesh Info would love your review.</p>
+
+                <a href="https://maps.app.goo.gl/RUj7n32uGPgu6fk29" target="_blank"
+                style="color:#ffcc00; font-weight:bold; text-decoration:none; font-size: 1.1rem; display: inline-block; padding: 10px; border-radius: 8px; background: rgba(255, 204, 0, 0.1);">
+                ⭐ Click here to leave a Google Review →
+                </a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="margin-top:30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                
+                <a href="https://maps.app.goo.gl/RUj7n32uGPgu6fk29" target="_blank"
+                style="display:inline-block; padding:12px 20px; background:#00c853; color:#fff; border-radius:8px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                📍 View Location
+                </a>
+
+                <a href="tel:08967261996"
+                style="display:inline-block; padding:12px 20px; background:#ff6f00; color:#fff; border-radius:8px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                📞 Call Now
+                </a>
+
+                <a href="https://wa.me/918967261996" target="_blank"
+                style="display:inline-block; padding:12px 20px; background:#25D366; color:#fff; border-radius:8px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                💬 WhatsApp
+                </a>
+            </div>
+
+            <!-- Google Map Embed -->
+            <div style="margin-top:40px;">
+                <iframe 
+                src="https://www.google.com/maps?q=Khanakul%20Town%20Road,%20Arambagh,%20West%20Bengal%20712406&output=embed"
+                width="100%" height="250" style="border:1px solid var(--border-color); border-radius:16px;" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Business Info -->
+            <div style="margin-top:40px;">
+                <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Sree Gonesh Info</h3>
+                <p style="color:var(--text-gray); line-height: 1.8;">
+                Web Design in Arambagh | AI Website Services<br>
+                Khanakul Town Road, Arambagh, West Bengal 712406<br>
+                Phone: <a href="tel:08967261996" style="color: var(--primary); text-decoration: none;">08967261996</a>
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div style="margin-top:30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <a href="#" style="color:var(--primary); text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
+                <a href="#" style="color:var(--primary); text-decoration: none; margin: 0 10px;">Terms</a> |
+                <a href="#" style="color:var(--primary); text-decoration: none; margin: 0 10px;">Refund</a>
+            </div>
+
+            <!-- Dynamic Copyright -->
+            <p id="year-text" style="margin-top:20px; color:#777; font-size: 0.9rem;"></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set dynamic year for footer
+        document.getElementById('year-text').innerHTML = `&copy; ${new Date().getFullYear()} Sree Gonesh Info. All rights reserved.`;
+
+        // WhatsApp Redirect
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            let name = document.getElementById('wa_name').value;
+            let email = document.getElementById('wa_email').value;
+            let phone = document.getElementById('wa_phone').value;
+            let details = document.getElementById('wa_details').value;
+
+            let waNumber = "919382046060"; 
+            let message = `Hello Sree Gonesh Info! 👋%0A%0AI want to discuss an AI Setup.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Details:* ${details}`;
+            
+            window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+        }
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+        // Infinite Countdown Timer
+        function updateTimer() {
+            const now = new Date();
+            const tomorrow = new Date();
+            tomorrow.setHours(24, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const d = days.toString().padStart(2, '0');
+            const h = hours.toString().padStart(2, '0');
+            const m = minutes.toString().padStart(2, '0');
+            const s = seconds.toString().padStart(2, '0');
+
+            const ids = ["days-nav", "hours-nav", "minutes-nav", "seconds-nav", "days-nav2", "hours-nav2", "minutes-nav2", "seconds-nav2"];
+            
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (id.includes("days")) el.innerText = d;
+                    if (id.includes("hours")) el.innerText = h;
+                    if (id.includes("minutes")) el.innerText = m;
+                    if (id.includes("seconds")) el.innerText = s;
+                }
+            });
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
