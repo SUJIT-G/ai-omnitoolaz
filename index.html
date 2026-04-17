@@ -97,27 +97,38 @@
         /* === HEADER === */
         header { position: fixed; top: 0; width: 100%; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 100; display: flex; flex-direction: column; }
         
-        .nav-inner { display: flex; justify-content: center; align-items: center; padding: 15px 0; width: 100%;}
+        /* Nav Inner ko 'space-between' kiya taaki logo left aur menu right me rahe */
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; width: 100%;}
         
-        .logo-container {
-            display: flex; align-items: center; text-decoration: none; gap: 10px; 
-        }
+        .logo-container { display: flex; align-items: center; text-decoration: none; gap: 10px; }
         .logo-img { height: 40px; width: auto; }
         .logo-text { font-size: 24px; font-weight: bold; color: #ffffff; }
         .dot-info { color: #00d2ff; }
         
-        .announcement-bar {
-            background: #fbbf24; color: #000; overflow: hidden; white-space: nowrap;
-            padding: 10px 0; font-weight: 700; font-size: 0.9rem; position: relative;
-            z-index: 99; border-bottom: 1px solid rgba(0,0,0,0.1); width: 100%;
+        /* Navbar Links CSS */
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        
+        /* Special CTA Button for Digital Products */
+        .nav-cta { 
+            background: rgba(6, 182, 212, 0.1); 
+            border: 1px solid var(--primary); 
+            padding: 8px 20px; 
+            border-radius: 50px; 
+            color: var(--primary) !important; 
+            font-weight: 700 !important; 
+            transition: all 0.3s ease;
         }
+        .nav-cta:hover { background: var(--primary); color: #000 !important; box-shadow: 0 0 15px rgba(6, 182, 212, 0.4); }
 
-        .scrolling-text {
-            display: inline-block; padding-left: 100%; animation: scroll-left 25s linear infinite;
+        /* Mobile View me links hide karke sirf Products button dikhayenge */
+        @media (max-width: 768px) {
+            .hide-mobile { display: none; }
+            .nav-inner { padding: 10px 0; }
+            .logo-text { font-size: 20px; }
+            .nav-cta { padding: 6px 15px; font-size: 0.9rem; }
         }
-        .scrolling-text span { display: inline-block; padding-right: 50px; }
-        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-        .announcement-bar:hover .scrolling-text { animation-play-state: paused; }
         
         /* === HERO SECTION === */
         .hero { 
@@ -226,8 +237,9 @@
 </head>
 <body>
 
-    <!-- Header -->
+  <!-- Header -->
     <header>
+        <!-- Top Announcement Bar (Same as before) -->
         <div class="announcement-bar">
             <div class="scrolling-text">
                 <span>🔥 Limited Time Offer: Get Your AI Business Setup Free Consultation! </span>
@@ -237,13 +249,26 @@
                 <span> Ends In: <b id="days-nav2">00</b>d : <b id="hours-nav2">00</b>h : <b id="minutes-nav2">00</b>m : <b id="seconds-nav2">00</b>s </span>
             </div>
         </div>
+
+        <!-- Main Navbar -->
         <div class="container nav-inner">
+            <!-- Left Side: Logo -->
             <a href="index.html" class="logo-container">
                 <img src="images/Sree gonesh Info .png" alt="Logo" class="logo-img">
                 <span class="logo-text">SreeGonesh<span class="dot-info">.Info</span></span>
             </a>
+
+            <!-- Right Side: Navigation Menu (NEWLY ADDED) -->
+            <nav class="nav-links">
+                <a href="#services" class="hide-mobile">Services</a>
+                <a href="#portfolio" class="hide-mobile">Case Study</a>
+                <a href="#contact" class="hide-mobile">Contact</a>
+                
+                <!-- Digital Products CTA Button -->
+                <a href="products.html" class="nav-cta">Digital Products ✨</a>
+            </nav>
         </div>
-    </header>
+    </header>  
 
     <!-- Hero Section -->
     <section class="hero text-center">
